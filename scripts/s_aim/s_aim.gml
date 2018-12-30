@@ -1,4 +1,3 @@
-// Instantiate _xx and _yy in your calling instance first
 var target = argument0 // Target to aim at
 var weaponSpeed = argument1 // Projectile speed
 
@@ -40,7 +39,16 @@ if instance_exists(target)
 		var _enemystepstoreach = _pointpathdist / target.pathspeed_
 		
 		// The distance in pixels the projectile is from reaching the point
-		var _bullettraveldist = point_distance(x, y, _xx, _yy)
+		if variable_instance_exists(id,"_xx") && variable_instance_exists(id,"_yy")
+		{
+			var _bullettraveldist = point_distance(x, y, _xx, _yy)
+		}
+		else
+		{
+			variable_instance_set(id,"_xx",0)
+			variable_instance_set(id,"_yy",0)
+			var _bullettraveldist = point_distance(x, y, _xx, _yy)
+		}		
 		
 		// The time in steps between the enemy reaching the point and the projectile reaching the point
 		var _delay = _enemystepstoreach - _bullettraveldist/12
