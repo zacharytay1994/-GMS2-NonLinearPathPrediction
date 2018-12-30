@@ -1,3 +1,4 @@
+// Instantiate _xx and _yy in your calling instance first
 var target = argument0 // Target to aim at
 var weaponSpeed = argument1 // Projectile speed
 
