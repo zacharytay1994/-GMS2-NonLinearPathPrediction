@@ -1,14 +1,4 @@
-//if _wcs > 0
-//{
-//	_wcs -= 1
-//}
-//else
-//{
-//	_wcs = 0
-//	instance_destroy()
-//}
-
-//if _enemyeta > 0
-//{
-//	_enemyeta -= obj_enemy.pathspeed_
-//}
+if x > room_width || x < 0 || y > room_height || y < 0
+{
+	instance_destroy()
+}
